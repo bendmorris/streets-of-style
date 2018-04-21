@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="14" tilewidth="16" tileheight="16" nextobjectid="5">
+ <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16" tilecount="64">
+  <image source="../graphics/tiles.png" width="128" height="128"/>
+ </tileset>
+ <layer name="bg" width="128" height="14">
+  <properties>
+   <property name="scrollX" value="0.25"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztlM0OgzAMg7mUcmHl1vd/0zGJSJaV0kAZJ0/6tKlN7PxUS9M0JWLd+TjnUaL5oz5vcLXGN3r6R00W48XmnfmlmcyN8/zAjL08Pss3dKOMzPDufEf7+WmXg0j852SHkXdXKN/qj/i35tB6055GtE/T8LTnhn5UO5/sM7p39Bx937b/3Mlfj/tIn2fzL6BXgpqRN5fJp3feq5ljbe/Yg+WsHe2r7yT6/8Fanva2sxzfyfldCYxBEsQsEMc+Vof14OXbHfpinei/wD174Zwq5FXIr+SPNS90t1Ge6bfmhHrYA9fP8/b8sRdvV97bYK3qxDyJfXpxddBHCCGEEEIIIYQQQsT4AmYmKeI=
+  </data>
+ </layer>
+ <layer name="fg" width="128" height="14">
+  <properties>
+   <property name="scrollX" value="1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztVttqwzAMddy+7PIytpSO3gbdQ/cJ3f9/2Byw4Ew9kr2SJqGL4BDXlo6OLLs4hNnuxRZjCzBsAbg3m0ptU9GBtiT4q0aJWZIx/i6Z5K3xrTXhw2+Nae0LtcZ4LW5c1/tSqwXPjtUv5qPn0VB7A/DyMfNys1i9Z2zs1eedM71v1tlkfqyf3l4wXawO9GmMXIzXq7PUay8O+9DpaRM+Elb524bLc+CdV6t+L69Vm1U/iymdUfE55NoOxCeEy/ylPbfuvxUv4xj4HbN4ZNzk2BbG2/xd5bktWTvl9RPMdz4PGaJll/CUsE94zr/x/yCC9heCqHwEK5iLxL9VOSSmIZxR8TbhUqOMJQ/O7506ogG5G5pfsM5a1s4ebEleVhfm0zwy3oXfe4N1MY1RrQuw/7L2mrBJeCM5kK+m/6iNxeK5iyrfnvDp2ryasbfCsQGwOjQP5vfuQo1e68yxuqx8n9CzWjxeEVODb4Ih8vbFeyt9Je7Svlk8Xe+Pgd+7a3A2xkPglvmGrqUPbTWaj3P/R+eeQv/fe4Lu/9eAOPdYB6vrVtx97rnufyl2vv/jc0/h/s/9/7/9t97/17xla9+gQ7yXh8wxtraa9z/L1fX+B2+bTec=
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" gid="40" x="240" y="112" width="16" height="16">
+   <properties>
+    <property name="style" value="brown"/>
+    <property name="type" value="salon"/>
+   </properties>
+  </object>
+  <object id="2" gid="31" x="1296" y="96" width="16" height="16">
+   <properties>
+    <property name="style" value="sunglasses"/>
+    <property name="type" value="store"/>
+   </properties>
+  </object>
+  <object id="3" gid="32" x="416" y="112" width="16" height="16">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="4" gid="24" x="1648" y="112" width="16" height="16">
+   <properties>
+    <property name="type" value="theater"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

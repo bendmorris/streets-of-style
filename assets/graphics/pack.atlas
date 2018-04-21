@@ -1,0 +1,41 @@
+
+pack.png
+size: 344,344
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dollar
+  rotate: false
+  xy: 2, 338
+  size: 12, 6
+  orig: 12, 6
+  offset: 0, 0
+  index: -1
+halfheart
+  rotate: false
+  xy: 2, 324
+  size: 8, 12
+  orig: 8, 12
+  offset: 0, 0
+  index: -1
+heart
+  rotate: false
+  xy: 2, 310
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 2, 52
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+msgbox
+  rotate: false
+  xy: 2, 2
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
