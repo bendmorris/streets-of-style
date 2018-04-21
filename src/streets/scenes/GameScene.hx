@@ -97,6 +97,6 @@ class GameScene extends Scene
 		while (Math.abs(enemy.x - player.x) < HXP.width) enemy.randomizePosition();
 		add(enemy);
 		enemies.push(enemy);
-		enemy.onRemove.bind(enemies.remove.bind(enemy));
+		enemy.onRemove.bind(function() enemies.remove(enemy));
 	}
 }
