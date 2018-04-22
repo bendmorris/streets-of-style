@@ -111,10 +111,10 @@ class Enemy extends Character
 		}
 	}
 
-	static var VALS:Array<Int> = [50, 20, 10, 5, 2, 1];
+	static var DENOMINATIONS:Array<Int> = [100, 50, 20, 10, 5, 2, 1];
 	function spawnMoney(n:Int)
 	{
-		for (val in VALS)
+		for (val in DENOMINATIONS)
 		{
 			while (n >= val)
 			{

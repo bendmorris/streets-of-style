@@ -49,6 +49,7 @@ class Main extends Engine
 	public function new()
 	{
 		super(256, 224, 60, false);
+		maxElapsed = 0.05;
 	}
 
 	override public function init()

@@ -102,7 +102,7 @@ class GameScene extends Scene
 
 	function quit()
 	{
-		HXP.scene = new TitleScene();
+		HXP.engine.pushScene(new QuitScene());
 	}
 
 	function spawnEnemy()
