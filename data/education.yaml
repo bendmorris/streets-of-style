@@ -35,3 +35,9 @@ education:
   description: You won't be taken advantage of!
   cost: 200
   bonus: 20
+- id: marketing
+  value: 6
+  name: Marketing
+  description: You're getting your name out there!
+  cost: 500
+  bonus: 50
