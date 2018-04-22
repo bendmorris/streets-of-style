@@ -23,7 +23,7 @@ class TheaterScene extends Scene
 		if (player.hair == Hairstyle.ordered[Hairstyle.ordered.length - 1] && player.outfit == Outfit.ordered[Outfit.ordered.length - 1])
 		{
 			Sound.play("upgrade");
-			txt += "Who needs the movies? <rainbow>You're the real star!</rainbow>";
+			txt += "Who needs the movies? <rainbow>You're the real star!</rainbow>\n\nTHE END";
 		}
 		else
 		{
