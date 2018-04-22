@@ -23,7 +23,7 @@ class GameScene extends Scene
 		addGraphic(lv);
 		for (obj in lv.objects) add(obj);
 
-		player = new Player(false);
+		player = new Player();
 		player.play("idle");
 		player.y = 16 * 9;
 		player.x = 16 * 2;

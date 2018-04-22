@@ -137,26 +137,7 @@ class Character extends Entity
 		if (!busy && actionQueue.length > 0)
 		{
 			var action = actionQueue.shift();
-			switch (action)
-			{
-				case Hit(dmg):
-					hit(dmg);
-
-				case Punch:
-					// TODO
-					busy = true;
-					attack(1);
-					play("punch", true);
-
-				case Kick:
-					// TODO
-					busy = true;
-					attack(2.5);
-					play("kick", true);
-
-				default:
-					// TODO
-			}
+			handleAction(action);
 		}
 
 		super.update();
@@ -178,6 +159,25 @@ class Character extends Entity
 
 	public function punch() queueAction(Punch);
 	public function kick() queueAction(Kick);
+
+	function handleAction(action:ActionType)
+	{
+		switch (action)
+		{
+			case Hit(dmg):
+				hit(dmg);
+
+			case Punch:
+				busy = true;
+				attack(1);
+				play("punch", true);
+
+			case Kick:
+				busy = true;
+				attack(2.5);
+				play("kick", true);
+		}
+	}
 
 	inline function queueAction(action:ActionType)
 	{

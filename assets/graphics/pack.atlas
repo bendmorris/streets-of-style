@@ -1,12 +1,19 @@
 
 pack.png
-size: 344,344
+size: 352,352
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-dollar
+bar
   rotate: false
   xy: 2, 338
+  size: 5, 14
+  orig: 5, 14
+  offset: 0, 0
+  index: -1
+dollar
+  rotate: false
+  xy: 9, 346
   size: 12, 6
   orig: 12, 6
   offset: 0, 0
@@ -23,6 +30,13 @@ heart
   xy: 2, 310
   size: 13, 12
   orig: 13, 12
+  offset: 0, 0
+  index: -1
+knife
+  rotate: false
+  xy: 23, 347
+  size: 8, 5
+  orig: 8, 5
   offset: 0, 0
   index: -1
 logo

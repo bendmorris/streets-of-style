@@ -27,7 +27,7 @@ class TitleScene extends Scene
 		e.y = HXP.height * 0.75;
 		e.x = (HXP.width - l.textWidth) / 2;
 
-		var s = new Player(true);
+		var s = new Player();
 		s.scrollX = 0;
 		s.play("run");
 		s.y = 16 * 9;

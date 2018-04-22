@@ -20,7 +20,7 @@
   </data>
  </layer>
  <objectgroup name="objects">
-  <object id="1" gid="40" x="240" y="112" width="16" height="16">
+  <object id="1" gid="40" x="240" y="96" width="16" height="16">
    <properties>
     <property name="style" value="brown"/>
     <property name="type" value="salon"/>
@@ -32,12 +32,12 @@
     <property name="type" value="store"/>
    </properties>
   </object>
-  <object id="3" gid="32" x="416" y="112" width="16" height="16">
+  <object id="3" gid="32" x="416" y="96" width="16" height="16">
    <properties>
     <property name="type" value="library"/>
    </properties>
   </object>
-  <object id="4" gid="24" x="1648" y="112" width="16" height="16">
+  <object id="4" gid="24" x="1648" y="96" width="16" height="16">
    <properties>
     <property name="type" value="theater"/>
    </properties>
