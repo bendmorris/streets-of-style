@@ -41,7 +41,7 @@ outfits:
   cost: 700
 - id: white_suit
   row: 8
-  name: White Suit
+  name: Plush Robe
   style: 210
   cost: 2500
 - id: gold_suit

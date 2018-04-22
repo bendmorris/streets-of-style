@@ -2,7 +2,7 @@ package streets.entities;
 
 class Character extends Entity
 {
-	static var collisions:Array<Character> = new Array();
+	static var collisions:Array<Entity> = new Array();
 
 	static inline var MOVE_PER_SECOND:Int = 84;
 	static inline var PUSH_PER_SECOND:Int = 4;
@@ -143,7 +143,7 @@ class Character extends Entity
 		super.update();
 
 		collideInto("character", x, y, collisions);
-		for (collision in collisions) handleCollision(collision);
+		for (collision in collisions) handleCollision(cast collision);
 		HXP.clear(collisions);
 
 		boundPosition();
@@ -249,11 +249,11 @@ class Character extends Entity
 		collideInto("character", x + d * width * 0.75, y, collisions);
 		if (collisions.length > 0)
 		{
-			var closest = collisions[0];
+			var closest:Character = cast collisions[0];
 			var closestDistance = distance(closest);
 			for (i in 1 ... collisions.length)
 			{
-				var c = collisions[i];
+				var c:Character = cast collisions[i];
 				var nextDistance = distance(c);
 				if (nextDistance < closestDistance)
 				{

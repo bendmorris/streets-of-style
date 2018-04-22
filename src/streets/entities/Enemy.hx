@@ -82,7 +82,7 @@ class Enemy extends Character
 						}
 					case Cheer:
 						Sound.play("cash");
-						target.money += target.education.bonus + level;
+						spawnMoney(target.education.bonus + level);
 						// TODO: cheer statement
 						timer = 5;
 					case Taunt:
@@ -111,16 +111,26 @@ class Enemy extends Character
 		}
 	}
 
+	static var VALS:Array<Int> = [50, 20, 10, 5, 2, 1];
+	function spawnMoney(n:Int)
+	{
+		for (val in VALS)
+		{
+			while (n >= val)
+			{
+				n -= val;
+				var d = new Dollar(val);
+				d.x = (x + width / 2 - originX) + (Math.random() - 0.5) * width * 2;
+				d.y = (y + height / 2 - originY) + (Math.random() - 0.5) * width / 2;
+				scene.add(d);
+			}
+		}
+	}
+
 	function die()
 	{
 		var money = 2 + Std.random(level + 1);
-		for (i in 0 ... money)
-		{
-			var d = new Dollar();
-			d.x = (x + width / 2 - originX) + (Math.random() - 0.5) * width/2;
-			d.y = (y + height / 2 - originY) + (Math.random() - 0.5) * width/2;
-			scene.add(d);
-		}
+		spawnMoney(money);
 		scene.remove(this);
 	}
 }

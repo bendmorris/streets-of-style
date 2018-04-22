@@ -35,9 +35,9 @@ class Player extends Character
 		collideInto("money", x, y, collisions);
 		while (collisions.length > 0)
 		{
-			var d = collisions.pop();
+			var d:Dollar = cast collisions.pop();
 			d.scene.remove(d);
-			++money;
+			money += d.value;
 			Sound.play("cash");
 		}
 

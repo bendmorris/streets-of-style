@@ -10,25 +10,25 @@ education:
   name: Read a Book
   description: You read a book. Someone posted a picture on Instagram. Now everyone thinks you're smart!
   cost: 100
-  bonus: 2
+  bonus: 4
 - id: singing
   value: 2
   name: Singing Lessons
   description: You can sing! (With auto-tune.)
   cost: 110
-  bonus: 4
+  bonus: 7
 - id: guitar
   value: 3
   name: Guitar Lessons
   description: You can play rhythm! (It's easier than lead.)
   cost: 125
-  bonus: 6
+  bonus: 10
 - id: dance
   value: 4
   name: Dance Lessons
   description: You can move around on stage, and it doesn't look awkward!
   cost: 140
-  bonus: 8
+  bonus: 15
 - id: law
   value: 5
   name: Contract Law
@@ -40,4 +40,4 @@ education:
   name: Marketing
   description: You're getting your name out there!
   cost: 500
-  bonus: 50
+  bonus: 100
