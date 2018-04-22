@@ -22,6 +22,7 @@ class LibraryScene extends Scene
 		var maxEdu = Std.int(player.style / 50);
 		if (player.education < maxEdu)
 		{
+			Sound.play("upgrade");
 			++player.education;
 			txt += 'You read a book and feel a little wiser.\n\nAdoring fans think even more highly of you now (current education: [<green>${player.education}</green>])!';
 		}

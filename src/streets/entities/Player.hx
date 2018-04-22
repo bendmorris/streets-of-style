@@ -16,12 +16,14 @@ class Player extends Character
 			var d = collisions.pop();
 			d.scene.remove(d);
 			++money;
+			Sound.play("cash");
 		}
 	}
 
 	override function hit(dmg:Float)
 	{
 		super.hit(dmg);
+		Sound.play("ouch");
 		money -= Std.int(Math.ceil(dmg));
 		if (money < 0) money = 0;
 	}

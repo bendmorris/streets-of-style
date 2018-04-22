@@ -22,24 +22,8 @@ class Sound
 
 	static var _muted:Bool = false;
 	static var loaded:Map<String, Sfx> = new Map();
-	static var sfxQueue:Array<SoundType> = new Array();
-	static var volumeQueue:Array<Float> = new Array();
-
-	public static function update()
-	{
-		if (sfxQueue.length > 0)
-		{
-			_play(sfxQueue.shift(), volumeQueue.shift());
-		}
-	}
 
 	public static inline function play(sound:SoundType, ?volume:Float=1)
-	{
-		sfxQueue.push(sound);
-		volumeQueue.push(volume);
-	}
-
-	public static function _play(sound:SoundType, ?volume:Float=1)
 	{
 		if (!muted)
 		{

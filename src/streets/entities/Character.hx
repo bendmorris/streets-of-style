@@ -16,6 +16,8 @@ class Character extends Entity
 	var speed:Float = 1;
 	var flashTime:Float = 0;
 
+	public var level:Int = 0;
+
 	public var style(get, never):Int;
 	inline function get_style() return outfit.style + hair.style;
 
@@ -48,7 +50,9 @@ class Character extends Entity
 			gl.children[0] = sm;
 			play("idle", true);
 		}
-		return outfit = v;
+		outfit = v;
+		calculateLevel();
+		return v;
 	}
 
 	public var hair(default, set):Hairstyle = Hairstyle.Bald;
@@ -72,7 +76,9 @@ class Character extends Entity
 			}
 			play("idle", true);
 		}
-		return hair = v;
+		hair = v;
+		calculateLevel();
+		return v;
 	}
 
 	var actionQueue:Array<ActionType> = new Array();
@@ -231,12 +237,14 @@ class Character extends Entity
 	function hit(dmg:Float)
 	{
 		play("hit", true);
+		Sound.play("thud");
 		flashTime = 1;
 		busy = true;
 	}
 
 	function attack(dmg:Float)
 	{
+		Sound.play("attack");
 		var d = flipX ? -1 : 1;
 		collideInto("character", x + d * width * 0.75, y, collisions);
 		if (collisions.length > 0)
@@ -266,5 +274,12 @@ class Character extends Entity
 	inline function distancePoint(px:Float, py:Float):Float
 	{
 		return Math.abs(px - x) + Math.abs(py - y) * 2;
+	}
+
+	function calculateLevel()
+	{
+		var outfitLevel = Outfit.ordered.indexOf(outfit);
+		var hairLevel = Hairstyle.ordered.indexOf(hair);
+		level = outfitLevel + hairLevel;
 	}
 }

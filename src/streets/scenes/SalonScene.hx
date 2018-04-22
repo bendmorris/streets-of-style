@@ -35,6 +35,7 @@ class SalonScene extends Scene
 			{
 				txt += '<red>You don\'t have enough money <white>($<green>${player.money}</green>)\n\n<flash>Press ENTER</flash>';
 				onInputPressed.start.bind(close);
+				Sound.play("nope");
 			}
 		}
 		else
@@ -65,8 +66,9 @@ class SalonScene extends Scene
 		player.money -= style.cost;
 		player.hair = style;
 		onPurchase();
+		Sound.play("upgrade");
 		HXP.engine.popScene();
-		HXP.engine.pushScene(new MessageScene("Thanks for your purchase! You won't regret it!"));
+		HXP.engine.pushScene(new MessageScene("Thanks for your business! You won't regret it!"));
 	}
 
 	function close()

@@ -79,7 +79,7 @@ class GameScene extends Scene
 			}
 		}
 
-		var enemyBump = Hairstyle.ordered.indexOf(player.hair) + Outfit.ordered.indexOf(player.outfit);
+		var enemyBump = player.level;
 		if (enemies.length < MIN_ENEMIES + enemyBump)
 		{
 			while (enemies.length < MAX_ENEMIES + enemyBump) spawnEnemy();

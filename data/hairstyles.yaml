@@ -8,29 +8,29 @@ hairstyles:
   row: 2
   name: Brown Hair
   style: 15
-  cost: 5
+  cost: 10
 - id: black
   row: 4
   name: Black Hair
   style: 20
-  cost: 10
+  cost: 25
 - id: blonde
   row: 3
   name: Blonde Coif
   style: 30
-  cost: 25
+  cost: 50
 - id: red
   row: 1
   name: Red Hair
   style: 40
-  cost: 40
+  cost: 80
 - id: hat
   row: 5
   name: Porkpie Hat
-  style: 100
-  cost: 100
+  style: 180
+  cost: 250
 - id: crown
   row: 6
   name: Crown
-  style: 100
-  cost: 250
+  style: 280
+  cost: 2500

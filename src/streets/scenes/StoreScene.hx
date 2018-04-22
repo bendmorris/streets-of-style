@@ -33,6 +33,7 @@ class StoreScene extends Scene
 			}
 			else
 			{
+				Sound.play("nope");
 				txt += '<red>You don\'t have enough money <white>($<green>${player.money}</green>)\n\n<flash>Press ENTER</flash>';
 				onInputPressed.start.bind(close);
 			}
@@ -65,6 +66,7 @@ class StoreScene extends Scene
 		player.money -= style.cost;
 		player.outfit = style;
 		onPurchase();
+		Sound.play("upgrade");
 		HXP.engine.popScene();
 		HXP.engine.pushScene(new MessageScene("Thanks for your purchase! You won't regret it!"));
 	}

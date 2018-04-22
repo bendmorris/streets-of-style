@@ -22,6 +22,7 @@ class TheaterScene extends Scene
 		var maxEdu = player.style / 50;
 		if (player.hair == Hairstyle.ordered[Hairstyle.ordered.length - 1] && player.outfit == Outfit.ordered[Outfit.ordered.length - 1])
 		{
+			Sound.play("upgrade");
 			txt += "Who needs the movies? <rainbow>You're the real star!</rainbow>";
 		}
 		else

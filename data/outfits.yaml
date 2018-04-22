@@ -8,12 +8,12 @@ outfits:
   row: 1
   name: Shades
   style: 20
-  cost: 30
+  cost: 25
 - id: speedo
   row: 2
   name: Speedo
   style: 50
-  cost: 50
+  cost: 40
 - id: orange_jumpsuit
   row: 4
   name: Orange Jumpsuit
@@ -23,19 +23,19 @@ outfits:
   row: 3
   name: Jeans and Flannel
   style: 125
-  cost: 80
+  cost: 150
 - id: work_shirt
   row: 5
   name: Work Shirt
   style: 150
-  cost: 125
+  cost: 250
 - id: business_suit
   row: 6
   name: Business Suit
   style: 200
-  cost: 250
+  cost: 500
 - id: tutu
   row: 7
   name: Pink Tutu
-  style: 300
-  cost: 500
+  style: 220
+  cost: 1000

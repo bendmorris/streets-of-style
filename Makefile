@@ -1,4 +1,4 @@
-.PHONY: test fonts images atlases spine_images music
+.PHONY: test fonts images atlases spine_images music sounds
 
 HAXE_ARGS=
 
@@ -36,9 +36,10 @@ spine_images: assets/spine/fighter.svg
 	python -m inkscape_split assets/spine/fighter.svg && for i in `ls assets/spine/*.png`; do convert $$i -channel A -threshold 254 $$i; done
 
 music: $(patsubst assets/music/%.xm, assets/music/%.ogg, $(wildcard assets/music/*.xm))
+sounds: $(patsubst assets/sounds/%.wav, assets/sounds/%.ogg, $(wildcard assets/sounds/*.wav))
 
 %.wav: %.xm
-	xmp $< -a 3 -D gain=255 -o $@
+	xmp $< -a 1 -D gain=255 -o $@
 %.ogg: %.wav
 	rm -f $@
 	ffmpeg -i $< -acodec libvorbis $@

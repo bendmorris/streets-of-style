@@ -26,7 +26,7 @@ class Enemy extends Character
 		super(true);
 		this.target = target;
 		speed = 0.25 + Math.random() * 0.5;
-		health = 3 + Math.random() * 7;
+		health = 1 + Math.random() * level;
 	}
 
 	override public function update()
@@ -81,7 +81,8 @@ class Enemy extends Character
 							timer = 2.5 + Math.random() * 0.5;
 						}
 					case Cheer:
-						target.money += 1 + target.education;
+						Sound.play("cash");
+						target.money += 1 + target.education + level;
 						// TODO: cheer statement
 						timer = 5;
 					case Taunt:
@@ -105,13 +106,14 @@ class Enemy extends Character
 		{
 			collidable = false;
 			busy = true;
+			Sound.play("ouch");
 			play("die").onComplete.bind(die);
 		}
 	}
 
 	function die()
 	{
-		var money = 2 + Std.random(4);
+		var money = 2 + Std.random(level + 1);
 		for (i in 0 ... money)
 		{
 			var d = new Dollar();
