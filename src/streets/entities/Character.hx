@@ -151,7 +151,7 @@ class Character extends Entity
 				case Kick:
 					// TODO
 					busy = true;
-					attack(1.5);
+					attack(2.5);
 					play("kick", true);
 
 				default:
@@ -181,7 +181,7 @@ class Character extends Entity
 
 	inline function queueAction(action:ActionType)
 	{
-		if (actionQueue.length < 3) actionQueue.push(action);
+		if (actionQueue.length < 2) actionQueue.push(action);
 	}
 
 	public function play(name:String, reset:Bool = false)

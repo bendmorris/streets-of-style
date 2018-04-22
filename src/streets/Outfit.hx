@@ -11,7 +11,11 @@ abstract Outfit(String) from String to String
 		if (randomChoices == null)
 		{
 			randomChoices = new Array();
-			for (s in ordered) for (i in 0 ... Std.int(s.style / 5)) randomChoices.push(s);
+			for (i in 0 ... ordered.length - 1)
+			{
+				var s = ordered[i];
+				for (j in 0 ... Std.int(s.style / 5)) randomChoices.push(s);
+			}
 		}
 		return randomChoices[Std.random(randomChoices.length)];
 	}

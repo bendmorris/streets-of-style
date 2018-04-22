@@ -14,6 +14,9 @@ class GameScene extends Scene
 	var player:Player;
 	var enemies:Array<Enemy> = new Array();
 
+	var paused:Bool = false;
+	var pauseLabel:Label;
+
 	override public function begin()
 	{
 		var lv = new LevelTilemap(1);
@@ -56,12 +59,23 @@ class GameScene extends Scene
 		onInputPressed.punch.bind(player.punch);
 		onInputPressed.kick.bind(player.kick);
 		onInputPressed.quit.bind(quit);
+		onInputPressed.start.bind(pause);
+
+		pauseLabel = new Label("<flash>-- PAUSED --</flash>");
+		pauseLabel.x = (HXP.width - pauseLabel.textWidth) / 2;
+		pauseLabel.y = (HXP.height - pauseLabel.textHeight) / 2;
+		pauseLabel.scrollX = pauseLabel.scrollY = 0;
+		pauseLabel.visible = false;
+		addGraphic(pauseLabel);
 
 		HXP.engine.pushScene(new MessageScene("These threads are <sine>whack</sine> as hell. Need to find some <rainbow>sweet kicks</rainbow> or I won't get no respect in this town."));
 	}
 
 	override public function update()
 	{
+		pauseLabel.visible = paused;
+		if (paused) return;
+
 		super.update();
 
 		if (!player.busy)
@@ -98,5 +112,11 @@ class GameScene extends Scene
 		add(enemy);
 		enemies.push(enemy);
 		enemy.onRemove.bind(function() enemies.remove(enemy));
+	}
+
+	function pause()
+	{
+		Sound.play("pause");
+		paused = !paused;
 	}
 }

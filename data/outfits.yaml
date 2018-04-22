@@ -28,14 +28,24 @@ outfits:
   row: 5
   name: Work Shirt
   style: 150
-  cost: 250
+  cost: 200
 - id: business_suit
   row: 6
   name: Business Suit
-  style: 200
+  style: 175
   cost: 500
 - id: tutu
   row: 7
   name: Pink Tutu
+  style: 200
+  cost: 700
+- id: white_suit
+  row: 8
+  name: White Suit
+  style: 210
+  cost: 2500
+- id: gold_suit
+  row: 9
+  name: Gold Suit
   style: 220
-  cost: 1000
+  cost: 10000

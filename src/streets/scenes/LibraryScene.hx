@@ -5,6 +5,7 @@ class LibraryScene extends Scene
 	static inline var CHARS_PER_SECOND:Int = 64;
 
 	var player:Player;
+	var next:Null<Education>;
 	var label:Label;
 	var displayCharCount:Float = 0;
 
@@ -13,22 +14,33 @@ class LibraryScene extends Scene
 		super();
 		this.player = player;
 		bgAlpha = 0;
+		var i = Education.ordered.indexOf(player.education);
+		next = (i == Education.ordered.length - 1) ? null : Education.ordered[i + 1];
 	}
 
 	override public function begin()
 	{
 		var msgBox = new MessageBox(HXP.width - 16 * 4, HXP.height - 16 * 2);
 		var txt = '<center><green>Library</green>\n\n';
-		var maxEdu = Std.int(player.style / 50);
-		if (player.education < maxEdu)
+		if (next != null)
 		{
-			Sound.play("upgrade");
-			++player.education;
-			txt += 'You read a book and feel a little wiser.\n\nAdoring fans think even more highly of you now (current education: [<green>${player.education}</green>])!';
+			txt += 'For just $<green>${next.cost}</green>, I can teach you:\n\n${next.name}\n[<green>Fan income +${"$"}${next.bonus}</green>]\n\nCurrent: +${"$"}${player.education.bonus}\n\n';
+			if (player.money >= next.cost)
+			{
+				txt += "<green>Press ENTER to accept</green>\n<red>Press ESCAPE to leave</red>";
+				onInputPressed.start.bind(buy);
+			}
+			else
+			{
+				txt += '<red>You don\'t have enough money <white>($<green>${player.money}</green>)\n\n<flash>Press ENTER</flash>';
+				onInputPressed.start.bind(close);
+				Sound.play("nope");
+			}
 		}
 		else
 		{
-			txt += "You don't feel like reading now.\n\n<flash>Press ENTER</flash>";
+			txt += "You're one <sine>smart dude</sine>! Nothin more I can <rainbow>teach ya</rainbow>!\n\n<flash>Press ENTER</flash>";
+			onInputPressed.start.bind(close);
 		}
 		msgBox.addText(txt);
 		label = msgBox.label;
@@ -37,16 +49,23 @@ class LibraryScene extends Scene
 		msgBox.y = (HXP.height - msgBox.height) / 2;
 		addGraphic(msgBox);
 
-		onInputPressed.start.bind(close);
 		onInputPressed.quit.bind(close);
 	}
 
 	override public function update()
 	{
 		super.update();
-
 		displayCharCount += HXP.elapsed * CHARS_PER_SECOND;
 		label.displayCharCount = Std.int(displayCharCount);
+	}
+
+	function buy()
+	{
+		player.money -= next.cost;
+		player.education = next;
+		Sound.play("upgrade");
+		HXP.engine.popScene();
+		HXP.engine.pushScene(new MessageScene(next.description));
 	}
 
 	function close()

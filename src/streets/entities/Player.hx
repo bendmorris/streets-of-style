@@ -2,8 +2,8 @@ package streets.entities;
 
 class Player extends Character
 {
-	public var money:Int = 0;
-	public var education:Int = 0;
+	public var money:Int = #if cheat 10000 #else 0 #end;
+	public var education:Education = Education.None;
 
 	override public function update()
 	{

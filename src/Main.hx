@@ -38,7 +38,7 @@ class Main extends Engine
 	}
 	static function flash(txt:BitmapText, data:RenderData)
 	{
-		data.color = _sineTime >= 0.75 ? 0 : 0xffffff;
+		data.alpha = _sineTime >= 0.75 ? 0 : 1;
 	}
 	static function updateTime()
 	{

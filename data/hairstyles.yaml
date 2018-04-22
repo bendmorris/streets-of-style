@@ -6,12 +6,12 @@ hairstyles:
   cost: 1
 - id: brown
   row: 2
-  name: Brown Hair
+  name: Brown Hairstyle
   style: 15
   cost: 10
 - id: black
   row: 4
-  name: Black Hair
+  name: Black Hairstyle
   style: 20
   cost: 25
 - id: blonde
@@ -21,7 +21,7 @@ hairstyles:
   cost: 50
 - id: red
   row: 1
-  name: Red Hair
+  name: Red Hairstyle
   style: 40
   cost: 80
 - id: hat

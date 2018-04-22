@@ -82,7 +82,7 @@ class Enemy extends Character
 						}
 					case Cheer:
 						Sound.play("cash");
-						target.money += 1 + target.education + level;
+						target.money += target.education.bonus + level;
 						// TODO: cheer statement
 						timer = 5;
 					case Taunt:
