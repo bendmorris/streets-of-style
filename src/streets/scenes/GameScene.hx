@@ -61,12 +61,12 @@ class GameScene extends Scene
 		onInputPressed.quit.bind(quit);
 		onInputPressed.start.bind(pause);
 
-		pauseLabel = new Label("<flash>-- PAUSED --</flash>");
+		pauseLabel = new Label("<rainbow><sine>-- PAUSED --</sine></rainbow>");
 		pauseLabel.x = (HXP.width - pauseLabel.textWidth) / 2;
 		pauseLabel.y = (HXP.height - pauseLabel.textHeight) / 2;
 		pauseLabel.scrollX = pauseLabel.scrollY = 0;
 		pauseLabel.visible = false;
-		addGraphic(pauseLabel);
+		addGraphic(pauseLabel).layer = -HXP.height;
 
 		HXP.engine.pushScene(new MessageScene("These threads are <sine>whack</sine> as hell. Need to find some <rainbow>sweet kicks</rainbow> or I won't get no respect in this town."));
 	}
